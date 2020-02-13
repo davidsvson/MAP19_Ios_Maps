@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import CoreLocation
+
+
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let locationManager = CLLocationManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        // be användaren om tillåtelse att använda platstjänsten
+        // böver också lägga till text som skall synas på frågan i info.plist
+        locationManager.requestWhenInUseAuthorization()
         return true
     }
 
